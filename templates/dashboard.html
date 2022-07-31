@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg');">
+    <div class=" container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <span class="subheading">Manage your posts and change them</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-15">
+            <h1>Basic Actions</h1>
+            <div>
+                <a href="/edit/0">
+                    <button class="btn btn-primary text-uppercase">Add new Post</button>
+                </a>
+                <a href="/logout">
+                    <button class="btn btn-primary text-uppercase">LogOut</button>
+                </a>
+            </div>
+            <hr>
+            <h1>Upload a file here</h1>
+            <div class="mb-3">
+                <form action="/uploader" method="post" enctype="multipart/form-data">
+                    <input type="file" id="formFile" name="Myfile">
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                </form>
+            </div>
+            <hr>
+            <h1>Edit Post</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sr.No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date & Time</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                {% for yourpost in mypost %}
+                <tbody>
+                    <tr>
+                        <th scope="row">{{yourpost.SerialNumber}}</th>
+                        <td>{{yourpost.Title}}</td>
+                        <td>{{yourpost.Date}}</td>
+                        <td>
+                            <a href="/edit/{{yourpost.SerialNumber}}">
+                                <button class="btn btn-primary text-uppercase">Edit</button>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/delete/{{yourpost.SerialNumber}}">
+                                <button class="btn btn-primary text-uppercase">Delete</button>
+
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

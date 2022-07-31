@@ -1,0 +1,21 @@
+{
+    "params":
+    {
+        "local_server":true,
+        "local_uri":"mysql+pymysql://root:@localhost/codingthunder",
+        "prod_uri":"mysql://username:password@server/db",
+        "fb_url":"https://facebook.com/codingthunder",
+        "tw_url":"https://twitter.com/codingthunder",
+        "gh_url":"https://github.com/codingthunder",
+        "blog_name":"CodingThunder",
+        "tag_line":"Welcome To Coding Journey",
+        "gmail_user":"...#..@mtech.nitdgp.ac.in",
+        "gmail_password":"Ccmt@12345",
+        "about_text":"Journey with Rahul",
+        "about_content":"Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.",
+        "no_of_posts":2,
+        "Jemail":"rahul@gmail.com",
+        "Jpassword":"123456789",
+        "Jfile_location":"E:\\1.SOFTWARE TUTORIAL\\7.PYTHON\\2.FLASK"
+    }
+}
